@@ -73,11 +73,11 @@ def drawPolygon(polygon, cell_x, cell_y):
     seth( 0 )
     right(polygon.offset_rotation)
     if polygon.value == 1:
-        begin(fill)
+        begin_fill()
         for s in range(polygon.sides):
             forward(polygon.length)
             right(polygon.angle)
-        end(fill)
+        end_fill()
     else:
         for s in range(polygon.sides):
             forward(polygon.length)
@@ -85,18 +85,18 @@ def drawPolygon(polygon, cell_x, cell_y):
     up()
 
 def drawCell(UnitCell):
-    drawPolygon(UnitCell.d1, UnitCell.x, UnitCell.y)
-    drawPolygon(UnitCell.s1, UnitCell.x, UnitCell.y)
-    drawPolygon(UnitCell.s2, UnitCell.x, UnitCell.y)
-    drawPolygon(UnitCell.s3, UnitCell.x, UnitCell.y)
-    drawPolygon(UnitCell.s4, UnitCell.x, UnitCell.y)
-    drawPolygon(UnitCell.s5, UnitCell.x, UnitCell.y)
-    drawPolygon(UnitCell.s6, UnitCell.x, UnitCell.y)
-    drawPolygon(UnitCell.t1, UnitCell.x, UnitCell.y)
-    drawPolygon(UnitCell.t2, UnitCell.x, UnitCell.y)
-    drawPolygon(UnitCell.h1, UnitCell.x, UnitCell.y)
-    drawPolygon(UnitCell.h2, UnitCell.x, UnitCell.y)
-    drawPolygon(UnitCell.h3, UnitCell.x, UnitCell.y)
+    drawPolygon(UnitCell.d1, UnitCell.draw_x, UnitCell.draw_y)
+    drawPolygon(UnitCell.s1, UnitCell.draw_x, UnitCell.draw_y)
+    drawPolygon(UnitCell.s2, UnitCell.draw_x, UnitCell.draw_y)
+    drawPolygon(UnitCell.s3, UnitCell.draw_x, UnitCell.draw_y)
+    drawPolygon(UnitCell.s4, UnitCell.draw_x, UnitCell.draw_y)
+    drawPolygon(UnitCell.s5, UnitCell.draw_x, UnitCell.draw_y)
+    drawPolygon(UnitCell.s6, UnitCell.draw_x, UnitCell.draw_y)
+    drawPolygon(UnitCell.t1, UnitCell.draw_x, UnitCell.draw_y)
+    drawPolygon(UnitCell.t2, UnitCell.draw_x, UnitCell.draw_y)
+    drawPolygon(UnitCell.h1, UnitCell.draw_x, UnitCell.draw_y)
+    drawPolygon(UnitCell.h2, UnitCell.draw_x, UnitCell.draw_y)
+    drawPolygon(UnitCell.h3, UnitCell.draw_x, UnitCell.draw_y)
 
 
 def drawUnitGrid(UnitGrid):
