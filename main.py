@@ -17,9 +17,9 @@ class Polygon:
         self.y_offset = y_offset
         self.x_offset = x_offset                        # x offset relative to the unit cell
         self.y_offset = y_offset                        # y offset relative to the unit cell
-        self.life_threshold = .75*self.sides            # sets a threshold for a new polygon being "born"
+        self.life_threshold = .5*self.sides            # sets a threshold for a new polygon being "born"
         self.lower_death_threshold = .25*self.sides     # sets a threshold past which the polygon will "die" due to underpopulation
-        self.upper_death_threshold = self.sides         # sets a threshold past which the polygon will "die" of overcrowding
+        self.upper_death_threshold = .6*self.sides         # sets a threshold past which the polygon will "die" of overcrowding
         self.offset_rotation = offset_rotation
 
     def __repr__(self):
@@ -268,13 +268,13 @@ class UnitCell:
         self.h3.update(self, self.x, self.y)
 
     def pick_random(self):
-        self.d1.value = random.choice([True,False])
-        self.s1.value = random.choice([True,False])
-        self.s2.value = random.choice([True,False])
-        self.s3.value = random.choice([True,False])
-        self.s4.value = random.choice([True,False])
-        self.s5.value = random.choice([True,False])
-        self.s6.value = random.choice([True,False])
+        self.d1.value = random.choice([True,False,False])
+        self.s1.value = random.choice([True,True,False])
+        self.s2.value = random.choice([True,True,False])
+        self.s3.value = random.choice([True,True,False])
+        self.s4.value = random.choice([True,True,False])
+        self.s5.value = random.choice([True,True,False])
+        self.s6.value = random.choice([True,True,False])
         self.h1.value = random.choice([True,False])
         self.h2.value = random.choice([True,False])
         self.h3.value = random.choice([True,False])
